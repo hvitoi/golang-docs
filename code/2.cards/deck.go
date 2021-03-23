@@ -43,10 +43,12 @@ func (d deck) print() {
 	}
 }
 
+// Convert the deck into a comma-separated string
 func (d deck) toString() string {
-	return strings.Join([]string(d), ",")
+	return strings.Join([]string(d), ",") // convert the deck array into string array and join
 }
 
+// Save the deck into a file
 func (d deck) saveToFile(filename string) error {
 	return ioutil.WriteFile(filename, []byte(d.toString()), 0666)
 }
